@@ -1,0 +1,2742 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="XT9#cS0Ojj,zkS0J(/uq">Salon message "&gt;"</variable>
+    <variable id="7Z1kYX_onwsUmn#|]=cl">Suggestion</variable>
+    <variable id="aVze[zymP0t$}uGgN46#">Participants concours</variable>
+    <variable id="usbt8~HE/G?fi9pZHoE^">Changement (pseudo)</variable>
+    <variable id=",i},o)oaBb)asKpPA|ik">Pseudo de la suggestion</variable>
+    <variable id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</variable>
+    <variable id="3~l49lml8}Mi,=aP;*45">Réponses suggestions (contenu)</variable>
+    <variable id="BsvogW)Q:sUyJ%7~B_mN">Concours (Salon)</variable>
+    <variable id="1DI:n7,F8k2XikKG5B.7">Titre Broadcast</variable>
+    <variable id="4~,2o|(`}awCr.W.*B0H">Réponses suggestions (id créateur)</variable>
+    <variable id="3L2$E3|450QybS3G98_Y">Concours (Titre)</variable>
+    <variable id="c=|4$nn]^u+h7BdP.HP:">Réponses suggestion (raison)</variable>
+    <variable id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</variable>
+    <variable id="u|?*4[-_C^/(~QzTWFe[">Concours (Nombre de gagants)</variable>
+    <variable id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</variable>
+  </variables>
+  <block type="s4d_on_message" id=")BH(Thdh)[T/onP{p|{l" x="4022" y="-2084">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="qsu?dUMz3@,=_$d;[Ue!">
+        <value name="IF0">
+          <block type="logic_compare" id="G=1[z/GXm6K;UgbY~M9U">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="[38=G92u|n^MgRkEY;yi"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="bOwt1Q}^(%x4g2oIp}6!">
+                <field name="TEXT">f/nick</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_send_wait_reply" id="0.%fc`h/:g=Z{LnX{-^N">
+            <value name="CONTENT">
+              <shadow type="text" id="F(XAih6sBd.ADghrq]VU">
+                <field name="TEXT">Quel est votre prénom ?</field>
+              </shadow>
+              <block type="text_join" id="/cFjs.=Oz`-DQ^=JC;?s">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="s4d_message_author" id="N@iS6,v`?@s${itgh1bx"></block>
+                </value>
+                <value name="ADD1">
+                  <block type="text" id="rVqm?Hi%-7r0{11bzz4f">
+                    <field name="TEXT"> quel est le pseudo que vous voulez avoir ?</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="CHANNEL">
+              <block type="s4d_message_channel" id="spS@+3V+@C$F/#YKtEeZ"></block>
+            </value>
+            <value name="MEMBER">
+              <block type="s4d_message_author" id="T~RL}Z^OzCr#o=8ifqa."></block>
+            </value>
+            <value name="TIME">
+              <shadow type="math_number" id="For4{^4Km_:6*3RUY:qI">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+            <statement name="THEN">
+              <block type="variables_set" id="mGxO@M:o=-7!YR6CH_uN">
+                <field name="VAR" id="usbt8~HE/G?fi9pZHoE^">Changement (pseudo)</field>
+                <value name="VALUE">
+                  <block type="s4d_send_wait_reply_value" id="d1%-#n!O:9saTugI$@s]"></block>
+                </value>
+                <next>
+                  <block type="s4d_send_wait_reply" id="Cug*%a:lLP*nbv94e3?J">
+                    <value name="CONTENT">
+                      <shadow type="text">
+                        <field name="TEXT">Quel est votre prénom ?</field>
+                      </shadow>
+                      <block type="text_join" id="2uHtjV:sd}!~KCoqyM(9">
+                        <mutation items="4"></mutation>
+                        <value name="ADD0">
+                          <block type="s4d_message_author" id="1~/}n.i1?Yv*7phm6s3@"></block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="text" id="y2jIw3,}WLm}b6o.wcrO">
+                            <field name="TEXT"> acceptez vous le changement de pseudo pour "</field>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="variables_get" id=";(sG(SUu4NqAB,`0/TO/">
+                            <field name="VAR" id="usbt8~HE/G?fi9pZHoE^">Changement (pseudo)</field>
+                          </block>
+                        </value>
+                        <value name="ADD3">
+                          <block type="text" id="A*oj-3ct!e_(yz+nrF.q">
+                            <field name="TEXT">" ? (Réponses possibles : **oui** ou **non**)</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id=".}~jHalvF6#ZNv.[Vm=s"></block>
+                    </value>
+                    <value name="MEMBER">
+                      <block type="s4d_message_author" id="a.-!Sst+eXgi60dFKY?/"></block>
+                    </value>
+                    <value name="TIME">
+                      <shadow type="math_number" id="GSVu,!XW:|P!+@ARqS%a">
+                        <field name="NUM">5</field>
+                      </shadow>
+                    </value>
+                    <statement name="THEN">
+                      <block type="controls_if" id="C;72C3%y}?_*7Vk}n5Oh">
+                        <mutation else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id="sl}.ENNzLbHfn(~Wu[ox">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="s4d_send_wait_reply_value" id="@%0(N@XIXXtd/LaXgn4T"></block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id="^pAEJEiBYt=0fwlo7yd8">
+                                <field name="TEXT">oui</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="s4d_set_member_nickname" id="PGF|knU;%C::go.IB2zt">
+                            <value name="MEMBER">
+                              <block type="s4d_message_author" id="}^#}o+[F/BPZax[t3#=-"></block>
+                            </value>
+                            <value name="NEW_NICKNAME">
+                              <block type="variables_get" id="4$-lq]3xgrg54i[Yz)M#">
+                                <field name="VAR" id="usbt8~HE/G?fi9pZHoE^">Changement (pseudo)</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="s4d_send_channel" id="Pwi!J5RzznKzx:m^F`r3">
+                                <value name="CONTENT">
+                                  <block type="text" id="G$z5(S)9.Vx)B?4iqJJ1">
+                                    <field name="TEXT">Changement de pseudo effectué avec succès !</field>
+                                  </block>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_message_channel" id=".|I;([VpYL=`DG9?ETUr"></block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="controls_if" id="tF2B2i*|crx5L2Mixlau">
+                            <mutation else="1"></mutation>
+                            <value name="IF0">
+                              <block type="logic_compare" id="ku|%35nY{.JzR=O^(xUc">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="s4d_send_wait_reply_value" id="+h{VMQJ,]q[%nn$+]Pq%"></block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="BnPaO|de%V{z?nX+1N9P">
+                                    <field name="TEXT">non</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="s4d_send_channel" id="tsQj4Yy{*rc7i57MRsAo">
+                                <value name="CONTENT">
+                                  <block type="text_join" id="WZg9B_wibn.bHT%^IWAF">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="s4d_message_author" id=";G1^Hk,sOCJMJUQK{`6O"></block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="-i1RVl!!yfij6ak!4Dm~">
+                                        <field name="TEXT"> annulation du changement de nom.</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_message_channel" id="#YxUWr4+O=obsNP*o]Re"></block>
+                                </value>
+                              </block>
+                            </statement>
+                            <statement name="ELSE">
+                              <block type="s4d_send_channel" id="!VT,Hu#*wHZI@N{z?(AX">
+                                <value name="CONTENT">
+                                  <block type="text_join" id="3/]Z58g_3Qi{S94~8I5K">
+                                    <mutation items="4"></mutation>
+                                    <value name="ADD0">
+                                      <block type="s4d_message_author" id="BdwMVfc6^)tzeyT]ml(B"></block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="0W0i2y;Ir+Jo8TNejKl9">
+                                        <field name="TEXT"> cette réponse n'est pas valide, le bot n'accepte pas certains types de textes (majuscules, tirets, chiffres et nombres, accents, ect...)</field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD2">
+                                      <block type="s4d_newline" id="KLKCMGTo%onl:|-;=wj["></block>
+                                    </value>
+                                    <value name="ADD3">
+                                      <block type="text" id="aP2rXIY`xU)xVQ@rS5n,">
+                                        <field name="TEXT">Veuillez recommencer depuis le début (f/nick).</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_message_channel" id="bxym[^|dlljh4WY$o^]R"></block>
+                                </value>
+                              </block>
+                            </statement>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <statement name="CATCH">
+                      <block type="s4d_send_channel" id="U:{gTta)yO7@C?up54V0">
+                        <value name="CONTENT">
+                          <block type="text_join" id="B;p!6:yy]ONh9bnd2xR5">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="s4d_message_author" id="z+@rvVvLtP_T=1rd-51X"></block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="text" id="xm@6nYS#yP}n|=UZ9R0~">
+                                <field name="TEXT"> annulation du changement de nom.</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="CHANNEL">
+                          <block type="s4d_message_channel" id="{qia[qVD8$[[3ZwzMhQ3"></block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="CATCH">
+              <block type="s4d_send_channel" id="Pw}lgEq##eV2Un/+/Khz">
+                <value name="CONTENT">
+                  <block type="text_join" id="2?oRIbM(XPq7e(^l{#$y">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="s4d_message_author" id="83;MT~]/:}]R`]?/$S]s"></block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id="4oIZ?ywFJt6d@3B#U7b9">
+                        <field name="TEXT"> annulation du changement de nom.</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="7iQnwo21zY6w;|Ij_~7Y"></block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="zijo6jHO_4K39:]YLDNr" x="2633" y="-1153">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="B!UK3Km!w~y};,py}6,G">
+        <value name="IF0">
+          <block type="logic_compare" id="5I`w,NY^WDdf@b}Wau=_">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_channel_raw" id="`QC{XQy4[UIsWB25hdoG">
+                <field name="SEARCH_TYPE">ID</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="text" id="xibs*3|q15FfgGyi7wB2">
+                <field name="TEXT">860462016220889098</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="1Cu(D=DL97W+`4SRZa:V">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="eFBrz3EUS*4i(BzSo_eI">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_author_raw" id="M,1%5;^@iAse(MufS_qM">
+                    <field name="SEARCH_TYPE">ID</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="K@B%i3~qYF|-/BgIw~0p">
+                    <field name="TEXT">860181968439214100</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="ELSE">
+              <block type="variables_set" id="(k321$kl(J!YIU%Iu]=Z">
+                <field name="VAR" id="7Z1kYX_onwsUmn#|]=cl">Suggestion</field>
+                <value name="VALUE">
+                  <block type="s4d_message_content" id="~MONJOmxVAw|7Sq{c/ST"></block>
+                </value>
+                <next>
+                  <block type="variables_set" id="Ar;.nw*:t?Ap1`(hV:k$">
+                    <field name="VAR" id=",i},o)oaBb)asKpPA|ik">Pseudo de la suggestion</field>
+                    <value name="VALUE">
+                      <block type="s4d_message_author" id=",K#pq]R8)EVl/c(ZuD5)"></block>
+                    </value>
+                    <next>
+                      <block type="s4d_delete" id="iQ0hB(2]cdiI3ZJBdGHT">
+                        <next>
+                          <block type="s4d_wait_seconds" id="QkWJqH@^ABxl~JLi|cye">
+                            <value name="TIME">
+                              <shadow type="math_number" id="2~#]v*W/RbM732fD4EG)">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="s4d_send_channel" id="#|I*;zZu09-r%+Vq0G_o">
+                                <value name="CONTENT">
+                                  <block type="s4d_message_embed" id="-LnP7gBah1un),G-{:Gl">
+                                    <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                                    <value name="MESSAGE">
+                                      <block type="text_join" id="53Zr51G~oDm=wMUZ`D:4">
+                                        <mutation items="11"></mutation>
+                                        <value name="ADD0">
+                                          <block type="text" id="QS]uWMmQQ0mUYwpqAnVz">
+                                            <field name="TEXT">Suggestion proposée par : </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD1">
+                                          <block type="variables_get" id="ypxEau]=D^2PQy9]M|`t">
+                                            <field name="VAR" id=",i},o)oaBb)asKpPA|ik">Pseudo de la suggestion</field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD2">
+                                          <block type="s4d_newline" id="o{rq_WCjr`.W/VJFUSvr"></block>
+                                        </value>
+                                        <value name="ADD3">
+                                          <block type="s4d_newline" id="IG3/)NnLSOXY6f)OTRIU"></block>
+                                        </value>
+                                        <value name="ADD4">
+                                          <block type="variables_get" id="``5)5,Z$F;C*^mi4u-0J">
+                                            <field name="VAR" id="7Z1kYX_onwsUmn#|]=cl">Suggestion</field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD5">
+                                          <block type="s4d_newline" id="xk3jly!VN_@kK_L7^3{9"></block>
+                                        </value>
+                                        <value name="ADD6">
+                                          <block type="s4d_newline" id="jp[1rlxgKhtz!y0tTdGa"></block>
+                                        </value>
+                                        <value name="ADD7">
+                                          <block type="text" id=");UkP9NXGC.(ma47!|F7">
+                                            <field name="TEXT">Ajoutez la réaction ✅ OU ❌.</field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD8">
+                                          <block type="s4d_newline" id="Jo243`TH=T+{~0!V#v2("></block>
+                                        </value>
+                                        <value name="ADD9">
+                                          <block type="s4d_newline" id="5j5?/FCk:KfyN~0@#Rr+"></block>
+                                        </value>
+                                        <value name="ADD10">
+                                          <block type="text" id="9~YX_%p^~!RTv7lNdAdd">
+                                            <field name="TEXT">Préfixe du bot : f/</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="COLOR">
+                                      <block type="colour_picker" id="@SfJfO5%WObwhLkqcFWm">
+                                        <field name="COLOUR">#ffffff</field>
+                                      </block>
+                                    </value>
+                                    <value name="TITLE">
+                                      <block type="text" id=")An@[5#4@z#3NhRXt50s">
+                                        <field name="TEXT">Suggestion</field>
+                                      </block>
+                                    </value>
+                                    <value name="FOOTER">
+                                      <block type="text" id="}US7CMgCBO=9qb|,*=K.">
+                                        <field name="TEXT">FarmeLand | Créez vous aussi une suggestion !</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_message_channel" id="GRc~}a6N_cNaW^)K}?#2"></block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="#CKS,%CqI9CUCpvd`!+G" x="1004" y="-413">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="j#5xf(D-Q09mmkH^yZk2">
+        <value name="IF0">
+          <block type="logic_compare" id="Ma-.@i-=k.MnT|4ys}jg">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="F[WI!?`3Z:zb4Gd9|q^E"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="%;@]gw$5LW4AGImqf-$L">
+                <field name="TEXT">f/bc</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="-f9^OcM;pM7/87z)/u86">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="Si%=u;g/!s@3=Y~#(3p#">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_channel_raw" id="(fn#$B*[|hT]3jaxVJ|2">
+                    <field name="SEARCH_TYPE">ID</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="5@uKdO@yJ#i,dp@[-2yi">
+                    <field name="TEXT">860278319945089044</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="s4d_send_wait_reply" id="I0)YHnph?,!p~nko(72~">
+                <value name="CONTENT">
+                  <shadow type="text" id=",jf}]L.Nb^rvRO5WlajH">
+                    <field name="TEXT">Dans quel salon le Broadcast doit se faire ? (Donner l'identifiant)</field>
+                  </shadow>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="t/_bAc:=BC:kCxs1!orL"></block>
+                </value>
+                <value name="MEMBER">
+                  <block type="s4d_message_author" id="P47v8urX`Rgh$$4yozBr"></block>
+                </value>
+                <value name="TIME">
+                  <shadow type="math_number" id="s%fWHzp8]Kg.RqMQ7]Q9">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+                <statement name="THEN">
+                  <block type="variables_set" id="ooZ{lD8*4Poxc9C,vx,h">
+                    <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                    <value name="VALUE">
+                      <block type="s4d_send_wait_reply_value" id="84%PS](LMKu4~BH4.^8#"></block>
+                    </value>
+                    <next>
+                      <block type="s4d_send_wait_reply" id="KQO,w:{oU]oEfgu7pZ:H">
+                        <value name="CONTENT">
+                          <shadow type="text" id="_;Tv@SBZ0IBiY[~R:M{F">
+                            <field name="TEXT">Quel est votre titre de Broadcast ?</field>
+                          </shadow>
+                        </value>
+                        <value name="CHANNEL">
+                          <block type="s4d_message_channel" id="g/`ADxQ$DrjDA1nhz,OR"></block>
+                        </value>
+                        <value name="MEMBER">
+                          <block type="s4d_message_author" id="depS`rY5tqkNr53ED~h?"></block>
+                        </value>
+                        <value name="TIME">
+                          <shadow type="math_number" id="UV$-*k,uoLI$t0^*x4f2">
+                            <field name="NUM">10</field>
+                          </shadow>
+                        </value>
+                        <statement name="THEN">
+                          <block type="variables_set" id="H|xh5)vqD8_6Qw/XE~~N">
+                            <field name="VAR" id="1DI:n7,F8k2XikKG5B.7">Titre Broadcast</field>
+                            <value name="VALUE">
+                              <block type="s4d_send_wait_reply_value" id="YE4y4K{l`pKBolLAL),W"></block>
+                            </value>
+                            <next>
+                              <block type="s4d_send_wait_reply" id="yM)1/7^Ab$+4vU=OcSmU">
+                                <value name="CONTENT">
+                                  <shadow type="text" id="L|$+[,k@r(9KCrH]o6`q">
+                                    <field name="TEXT">Quelle est la couleur de votre broadcast ? (**rouge**, **vert**, **jaune**, **bleu**, **blanc**)</field>
+                                  </shadow>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_message_channel" id="%Hr9JZ$/T9IaII@qu#SI"></block>
+                                </value>
+                                <value name="MEMBER">
+                                  <block type="s4d_message_author" id="JfmoHc`mpUB9t{}ji./h"></block>
+                                </value>
+                                <value name="TIME">
+                                  <shadow type="math_number" id="Eq-R9:,AW(K~Tu}GP~;v">
+                                    <field name="NUM">10</field>
+                                  </shadow>
+                                </value>
+                                <statement name="THEN">
+                                  <block type="controls_if" id="c*unv1jTPkLIcTVzb?vx">
+                                    <mutation else="1"></mutation>
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="mSiVC$LWy;%D9?Jk[@m]">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="s4d_send_wait_reply_value" id="59,gox@B:09O#X9DxLcc"></block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="text" id="[=$EU,*NtJa(fc2IR?LF">
+                                            <field name="TEXT">rouge</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="variables_set" id="*L{0u=kwIVo;{os;?NWm">
+                                        <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                        <value name="VALUE">
+                                          <block type="colour_picker" id="9XAacph-)QclA7::wk*~">
+                                            <field name="COLOUR">#ff0000</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="s4d_send_wait_reply" id="9sTU1]Rz4dyl/V7TfxMT">
+                                            <value name="CONTENT">
+                                              <shadow type="text" id="s,Y(6L~l`NX^HHAjASQY">
+                                                <field name="TEXT">Quel est le contenu du Broadcast ?</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="CHANNEL">
+                                              <block type="s4d_message_channel" id="AXHLt:4%V8X_aaa_8t`Z"></block>
+                                            </value>
+                                            <value name="MEMBER">
+                                              <block type="s4d_message_author" id="RhAPv`Z%%NLXeuG#$2#("></block>
+                                            </value>
+                                            <value name="TIME">
+                                              <shadow type="math_number" id="+}mn)=6t[r@Z,t3$kvS?">
+                                                <field name="NUM">10</field>
+                                              </shadow>
+                                            </value>
+                                            <statement name="THEN">
+                                              <block type="variables_set" id="5:IY0BG~T!tG{ws$wRrf">
+                                                <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                <value name="VALUE">
+                                                  <block type="s4d_send_wait_reply_value" id="K:7^wav?2nFbYJSZZR4="></block>
+                                                </value>
+                                                <next>
+                                                  <block type="s4d_send_channel" id="l$FK;Gmqt1zUAL?ZWHph">
+                                                    <value name="CONTENT">
+                                                      <block type="s4d_message_embed" id="fQedPT|@9XCLw%CYRo*l">
+                                                        <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                                                        <value name="MESSAGE">
+                                                          <block type="variables_get" id="[dG/zW^Ij(50#2]8(?0a">
+                                                            <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="COLOR">
+                                                          <block type="variables_get" id="Svlq3)Uy$Zvy.Sv54f{C">
+                                                            <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="TITLE">
+                                                          <block type="variables_get" id="QhqW)gvOab:J7.tHto~}">
+                                                            <field name="VAR" id="1DI:n7,F8k2XikKG5B.7">Titre Broadcast</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="FOOTER">
+                                                          <block type="text" id="5OUf$}@.Hi4]BZvQoPq~">
+                                                            <field name="TEXT">FarmeLand | Season Sky V2</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="CHANNEL">
+                                                      <block type="s4d_get_channel" id="0q6?b~Nv096jJD=Q.Gu:">
+                                                        <field name="SEARCH_TYPE">ID</field>
+                                                        <value name="VALUE">
+                                                          <block type="variables_get" id="T|U,V1)NS?G5nM{eKnaV">
+                                                            <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="s4d_send_channel" id="Gp;Cjumw4FxRoPq%/`Cd">
+                                                        <value name="CONTENT">
+                                                          <block type="text_join" id="`K[d)}Ux6b[Gf1#LAyO{">
+                                                            <mutation items="3"></mutation>
+                                                            <value name="ADD0">
+                                                              <block type="text" id="Gy,-Opq[MkV(]68M~(W;">
+                                                                <field name="TEXT">Broadcast envoyé dans le salon </field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="ADD1">
+                                                              <block type="s4d_get_channel" id="(v~*DfTj@m-BkhwKhs:j">
+                                                                <field name="SEARCH_TYPE">ID</field>
+                                                                <value name="VALUE">
+                                                                  <block type="variables_get" id="J)7oMVFX8JxCO`{V$nTv">
+                                                                    <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <value name="ADD2">
+                                                              <block type="text" id="n6fd(U{yCB,nTs%zDCJ@">
+                                                                <field name="TEXT"> !</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <value name="CHANNEL">
+                                                          <block type="s4d_message_channel" id="YbZUjZl#,zqYDD_~,xpi"></block>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                            <statement name="CATCH">
+                                              <block type="s4d_send_channel" id="iL0}qi0Ok:/JcxZq@OhI">
+                                                <value name="CONTENT">
+                                                  <block type="text" id="nl}R5BS52)mP5FRZXU$9">
+                                                    <field name="TEXT">Abandon de la commande Broadcast.</field>
+                                                  </block>
+                                                </value>
+                                                <value name="CHANNEL">
+                                                  <block type="s4d_message_channel" id="KPa#;8pkpj53}-v3XP^3"></block>
+                                                </value>
+                                              </block>
+                                            </statement>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                    <statement name="ELSE">
+                                      <block type="controls_if" id="T}nVR)RWn3i`eDW,-PIT">
+                                        <mutation else="1"></mutation>
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="iW%QO`I*cWZOEJ4AnoH*">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="s4d_send_wait_reply_value" id="(H`/JC#fo,@)`[qpo}6D"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="3{C.}cH7E{VixqX3EFBN">
+                                                <field name="TEXT">vert</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="variables_set" id="=NIQ5bQChIhQfRmWJ1uw">
+                                            <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                            <value name="VALUE">
+                                              <block type="colour_picker" id="E[F9FA4qco07,ud`}1IL">
+                                                <field name="COLOUR">#33cc00</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="s4d_send_wait_reply" id=")?--I_%Id#=Hz}8tgF*b">
+                                                <value name="CONTENT">
+                                                  <shadow type="text" id="Y[t@U$u4Yk~Vh{0UN9O;">
+                                                    <field name="TEXT">Quel est le contenu du Broadcast ?</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="CHANNEL">
+                                                  <block type="s4d_message_channel" id="h5+D-dZ=/pQ,juN6qm|a"></block>
+                                                </value>
+                                                <value name="MEMBER">
+                                                  <block type="s4d_message_author" id="9r+gI?4@*Z!f?P[8W_tg"></block>
+                                                </value>
+                                                <value name="TIME">
+                                                  <shadow type="math_number" id="M]4G1*|Vw+tNt*{bvCsi">
+                                                    <field name="NUM">10</field>
+                                                  </shadow>
+                                                </value>
+                                                <statement name="THEN">
+                                                  <block type="variables_set" id="x6t1,hIl5R=^{?cmuwum">
+                                                    <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                    <value name="VALUE">
+                                                      <block type="s4d_send_wait_reply_value" id="NN$PvVmpUB++2aRhK!`r"></block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="s4d_send_channel" id="(-6/u/yyFw#Lf14_OI!i">
+                                                        <value name="CONTENT">
+                                                          <block type="s4d_message_embed" id="zUb+by7q*CyI%G~M^3}H">
+                                                            <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                                                            <value name="MESSAGE">
+                                                              <block type="variables_get" id="J0S2t,w9e,W+:|U_an3!">
+                                                                <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="COLOR">
+                                                              <block type="variables_get" id="8p4-:1k%=Isd*;#F{#~.">
+                                                                <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="TITLE">
+                                                              <block type="variables_get" id="L)[}|frZa|OlB#uZaE9s">
+                                                                <field name="VAR" id="1DI:n7,F8k2XikKG5B.7">Titre Broadcast</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="FOOTER">
+                                                              <block type="text" id="kYv7MwBG*SUEyD%]Byd*">
+                                                                <field name="TEXT">FarmeLand | Season Sky V2</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <value name="CHANNEL">
+                                                          <block type="s4d_get_channel" id="rxPTax!RogAQO_:;cVK+">
+                                                            <field name="SEARCH_TYPE">ID</field>
+                                                            <value name="VALUE">
+                                                              <block type="variables_get" id="E,eJ451@oc0gq]w{iXQk">
+                                                                <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="s4d_send_channel" id="S+5rrq3(CiJ!nC3SM%dI">
+                                                            <value name="CONTENT">
+                                                              <block type="text_join" id="GVe^`^5Ucsj7-$YGPPV^">
+                                                                <mutation items="3"></mutation>
+                                                                <value name="ADD0">
+                                                                  <block type="text" id="yqE{|]gFbQ(5zhvR(Ja|">
+                                                                    <field name="TEXT">Broadcast envoyé dans le salon </field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                  <block type="s4d_get_channel" id="Z/:doO{o?m}9FWUjQ.a|">
+                                                                    <field name="SEARCH_TYPE">ID</field>
+                                                                    <value name="VALUE">
+                                                                      <block type="variables_get" id="rXikdT-C}:-2qUtpoPUV">
+                                                                        <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ADD2">
+                                                                  <block type="text" id="@.yUEK!MPQZGq6zn2woG">
+                                                                    <field name="TEXT"> !</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <value name="CHANNEL">
+                                                              <block type="s4d_message_channel" id="w[OCJWuigDGqFOecovvp"></block>
+                                                            </value>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                                <statement name="CATCH">
+                                                  <block type="s4d_send_channel" id="K=#wl=[V3#p;/)vPm%$N">
+                                                    <value name="CONTENT">
+                                                      <block type="text" id="3(lBL(i12$C:{oUZXxp;">
+                                                        <field name="TEXT">Abandon de la commande Broadcast.</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="CHANNEL">
+                                                      <block type="s4d_message_channel" id="8W!iBY}b3yAsMv2q@6rV"></block>
+                                                    </value>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <statement name="ELSE">
+                                          <block type="controls_if" id="L?tZ2*e~wJyC{vCkLB97">
+                                            <mutation else="1"></mutation>
+                                            <value name="IF0">
+                                              <block type="logic_compare" id="0Yw:mi1)k2w_Xsu/p`an">
+                                                <field name="OP">EQ</field>
+                                                <value name="A">
+                                                  <block type="s4d_send_wait_reply_value" id="1K~i#FM9G(g^8aN@yb[D"></block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="text" id="AFyha]~aoK6[1vu94Fl3">
+                                                    <field name="TEXT">jaune</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <statement name="DO0">
+                                              <block type="variables_set" id="`^F.Gi./csg{Y)Hp$;^p">
+                                                <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                                <value name="VALUE">
+                                                  <block type="colour_picker" id="L;ZrDzL9a[o{)R)9i+y2">
+                                                    <field name="COLOUR">#ffcc33</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="s4d_send_wait_reply" id="].BPqVL@C-`MLcjgUC^G">
+                                                    <value name="CONTENT">
+                                                      <shadow type="text" id="KU72=69++}T7M@cZ4(!z">
+                                                        <field name="TEXT">Quel est le contenu du Broadcast ?</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="CHANNEL">
+                                                      <block type="s4d_message_channel" id="90_B8uZ67pa]R[Bld)_u"></block>
+                                                    </value>
+                                                    <value name="MEMBER">
+                                                      <block type="s4d_message_author" id="Un^kWFPfBC#.Y-e1)ncN"></block>
+                                                    </value>
+                                                    <value name="TIME">
+                                                      <shadow type="math_number" id="}+x[3Aqa;s?;Mtpk^{hZ">
+                                                        <field name="NUM">10</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <statement name="THEN">
+                                                      <block type="variables_set" id="Q(5G3m{j*X*:[7kCmJbN">
+                                                        <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                        <value name="VALUE">
+                                                          <block type="s4d_send_wait_reply_value" id="ee/7C=n}-[WojREhY~zD"></block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="s4d_send_channel" id="B91{Y~Zxx]/L7{hE$zd^">
+                                                            <value name="CONTENT">
+                                                              <block type="s4d_message_embed" id="T{1xw?WnII$IeWF!+.$a">
+                                                                <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                                                                <value name="MESSAGE">
+                                                                  <block type="variables_get" id="q?|zsX[abKrc6LNyes#u">
+                                                                    <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="COLOR">
+                                                                  <block type="variables_get" id="x5={%?umoX`GO:#p?l#,">
+                                                                    <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="TITLE">
+                                                                  <block type="variables_get" id="!;dd}040VZif]0aXZxM0">
+                                                                    <field name="VAR" id="1DI:n7,F8k2XikKG5B.7">Titre Broadcast</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="FOOTER">
+                                                                  <block type="text" id="$s#c6;bcw4F,o}I*]Oa-">
+                                                                    <field name="TEXT">FarmeLand | Season Sky V2</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <value name="CHANNEL">
+                                                              <block type="s4d_get_channel" id="a/x7EvotaEEOBaXi0H]j">
+                                                                <field name="SEARCH_TYPE">ID</field>
+                                                                <value name="VALUE">
+                                                                  <block type="variables_get" id="$$Ri#0q{3Lpw1UeH?]7G">
+                                                                    <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="s4d_send_channel" id="NX#]G7q+kh@2C+UdH3-+">
+                                                                <value name="CONTENT">
+                                                                  <block type="text_join" id="v}C?c):7I{6g90A8sh}W">
+                                                                    <mutation items="3"></mutation>
+                                                                    <value name="ADD0">
+                                                                      <block type="text" id="UH4d:re,.`a3D{qx^fBl">
+                                                                        <field name="TEXT">Broadcast envoyé dans le salon </field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="ADD1">
+                                                                      <block type="s4d_get_channel" id=";I,]*|i4`Kj0zz8p;nxW">
+                                                                        <field name="SEARCH_TYPE">ID</field>
+                                                                        <value name="VALUE">
+                                                                          <block type="variables_get" id="h18-_6E@E|/tmL-Ap)fQ">
+                                                                            <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="ADD2">
+                                                                      <block type="text" id="aZThG;CPHP(vxcNKFsxF">
+                                                                        <field name="TEXT"> !</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="CHANNEL">
+                                                                  <block type="s4d_message_channel" id="c/3_3(sFLws0K@5|k8kt"></block>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                    <statement name="CATCH">
+                                                      <block type="s4d_send_channel" id="b-+lwqWT,fK@E^Q6[(Ms">
+                                                        <value name="CONTENT">
+                                                          <block type="text" id="fGumINw130;^a7^sbEy{">
+                                                            <field name="TEXT">Abandon de la commande Broadcast.</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="CHANNEL">
+                                                          <block type="s4d_message_channel" id="C=)8k6F7BL@`fb.U0T,w"></block>
+                                                        </value>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                            <statement name="ELSE">
+                                              <block type="controls_if" id="V8_zSSikg-2$iiw7.4FE">
+                                                <mutation else="1"></mutation>
+                                                <value name="IF0">
+                                                  <block type="logic_compare" id="QbS/vZQ%b.{uE|eE5Tb[">
+                                                    <field name="OP">EQ</field>
+                                                    <value name="A">
+                                                      <block type="s4d_send_wait_reply_value" id="h!hu4awAFCg:PO`:T;U;"></block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="text" id="|ZIhAdBWd|,*~0|PR68w">
+                                                        <field name="TEXT">bleu</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                  <block type="variables_set" id="BvwhS,WL[cFSZ1HD{xPn">
+                                                    <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                                    <value name="VALUE">
+                                                      <block type="colour_picker" id="]e5WgAhm0a(FLME#C@PZ">
+                                                        <field name="COLOUR">#3366ff</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="s4d_send_wait_reply" id="hO,wzw6}~E*XL@wsvJxW">
+                                                        <value name="CONTENT">
+                                                          <shadow type="text" id="qTRaO@.7;c8`)V[8-k6Y">
+                                                            <field name="TEXT">Quel est le contenu du Broadcast ?</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="CHANNEL">
+                                                          <block type="s4d_message_channel" id="#lH%Etesg}Jax*gmr:+%"></block>
+                                                        </value>
+                                                        <value name="MEMBER">
+                                                          <block type="s4d_message_author" id="*W26$I))(USqf.QJ#g2C"></block>
+                                                        </value>
+                                                        <value name="TIME">
+                                                          <shadow type="math_number" id="cQtb*k?TC#h?zj_G()Zt">
+                                                            <field name="NUM">10</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <statement name="THEN">
+                                                          <block type="variables_set" id="d]d8foOB3Jdw},{;EJw5">
+                                                            <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                            <value name="VALUE">
+                                                              <block type="s4d_send_wait_reply_value" id="Amt?L703B.RQhh$}s9f["></block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="s4d_send_channel" id="}lQE=6NP8oL3U,nMx+vl">
+                                                                <value name="CONTENT">
+                                                                  <block type="s4d_message_embed" id="bU?._GU2A`;5Ya5EYK2f">
+                                                                    <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                                                                    <value name="MESSAGE">
+                                                                      <block type="variables_get" id="ZE4^H-EJrXnR;iS!!i,N">
+                                                                        <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="COLOR">
+                                                                      <block type="variables_get" id=":VbqY+_BudOH#1lua98.">
+                                                                        <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="TITLE">
+                                                                      <block type="variables_get" id="YCD2wLb{FBi+(PXRcl@o">
+                                                                        <field name="VAR" id="1DI:n7,F8k2XikKG5B.7">Titre Broadcast</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="FOOTER">
+                                                                      <block type="text" id=",n,Y3*5Me_s+z)Z3X:VP">
+                                                                        <field name="TEXT">FarmeLand | Season Sky V2</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="CHANNEL">
+                                                                  <block type="s4d_get_channel" id="V+v=CDgkKFWa(1ncoE:B">
+                                                                    <field name="SEARCH_TYPE">ID</field>
+                                                                    <value name="VALUE">
+                                                                      <block type="variables_get" id="P):V$EUti}apVm?@zh,8">
+                                                                        <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="s4d_send_channel" id="v+AM(/B4($2.@v`%[KX1">
+                                                                    <value name="CONTENT">
+                                                                      <block type="text_join" id="T$#pavwNE7kW#zL@o82@">
+                                                                        <mutation items="3"></mutation>
+                                                                        <value name="ADD0">
+                                                                          <block type="text" id="Y}R@Yx`+Q4oE@z!~xO%V">
+                                                                            <field name="TEXT">Broadcast envoyé dans le salon </field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                          <block type="s4d_get_channel" id="]?w,;pb4!W{[p[=m$eMG">
+                                                                            <field name="SEARCH_TYPE">ID</field>
+                                                                            <value name="VALUE">
+                                                                              <block type="variables_get" id="`v*(0*nvXrrKIe-Id:bk">
+                                                                                <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="ADD2">
+                                                                          <block type="text" id="/KXb{-M4@KBV1/8D6UHX">
+                                                                            <field name="TEXT"> !</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="CHANNEL">
+                                                                      <block type="s4d_message_channel" id="6oH5NGJ^k7_:-(kV{!Qc"></block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                        <statement name="CATCH">
+                                                          <block type="s4d_send_channel" id=",jR_UZyOT]h2JA6AB$eX">
+                                                            <value name="CONTENT">
+                                                              <block type="text" id="R6lgNKmzhKbO.1*,ma]p">
+                                                                <field name="TEXT">Abandon de la commande Broadcast.</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="CHANNEL">
+                                                              <block type="s4d_message_channel" id="7XzVAZv(5Ja,rUh%`aOH"></block>
+                                                            </value>
+                                                          </block>
+                                                        </statement>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                                <statement name="ELSE">
+                                                  <block type="controls_if" id=",BBztzOc/OzLW~53hskq">
+                                                    <mutation else="1"></mutation>
+                                                    <value name="IF0">
+                                                      <block type="logic_compare" id="j?KYLw6^YfeR,kHxgp|_">
+                                                        <field name="OP">EQ</field>
+                                                        <value name="A">
+                                                          <block type="s4d_send_wait_reply_value" id="~nAdh*F[x,_Ly(wWs/jF"></block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="text" id=":UJ}JM)ZxAIkU{D+V+(W">
+                                                            <field name="TEXT">blanc</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO0">
+                                                      <block type="variables_set" id=")f-d+q{|,nLADL9?O^D=">
+                                                        <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                                        <value name="VALUE">
+                                                          <block type="colour_picker" id=":bM;y9rD!-A(ls`9YxQV">
+                                                            <field name="COLOUR">#ffffff</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="s4d_send_wait_reply" id="Y8@M9*,5ihMnNoukR9V@">
+                                                            <value name="CONTENT">
+                                                              <shadow type="text" id="VTwU,uhFx4?9M5]SIm[x">
+                                                                <field name="TEXT">Quel est le contenu du Broadcast ?</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="CHANNEL">
+                                                              <block type="s4d_message_channel" id="?%tg0lxgVsV!g0N?IOU4"></block>
+                                                            </value>
+                                                            <value name="MEMBER">
+                                                              <block type="s4d_message_author" id="}*2j@Xhb~Uo-2zFEE.X`"></block>
+                                                            </value>
+                                                            <value name="TIME">
+                                                              <shadow type="math_number" id="C+=jlyb5d0s;el+kpL(z">
+                                                                <field name="NUM">10</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <statement name="THEN">
+                                                              <block type="variables_set" id="~lOt`_K#.81gG+^:h5KL">
+                                                                <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                                <value name="VALUE">
+                                                                  <block type="s4d_send_wait_reply_value" id="Qw:|.|S9%UI:KAkkKh/."></block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="s4d_send_channel" id="*y@nT.z}D/m.%gzSA[il">
+                                                                    <value name="CONTENT">
+                                                                      <block type="s4d_message_embed" id="onhRxWv/cF;Y?`}^DZBy">
+                                                                        <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                                                                        <value name="MESSAGE">
+                                                                          <block type="variables_get" id="a)SLM*H*{S(27bU?q+lK">
+                                                                            <field name="VAR" id="{PGjrvh|}l``D~[sq#[k">Contenue Broadcast</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="COLOR">
+                                                                          <block type="variables_get" id="}H4-+*!i~w%oVY13/h5,">
+                                                                            <field name="VAR" id="b/I5DT9Q3`S8;6)DY+yk">Couleur Broadcast</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="TITLE">
+                                                                          <block type="variables_get" id="n_P__D2c?@)*LE]U#n~~">
+                                                                            <field name="VAR" id="1DI:n7,F8k2XikKG5B.7">Titre Broadcast</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="FOOTER">
+                                                                          <block type="text" id=")Y^6{UjD8no|!hL$H@Z5">
+                                                                            <field name="TEXT">FarmeLand | Season Sky V2</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="CHANNEL">
+                                                                      <block type="s4d_get_channel" id="sSt5AL(#2tkcV6;wi|iF">
+                                                                        <field name="SEARCH_TYPE">ID</field>
+                                                                        <value name="VALUE">
+                                                                          <block type="variables_get" id="IatQthDKafTt~;6(;My4">
+                                                                            <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="s4d_send_channel" id="rn0q|e|mxUouyLilu1{A">
+                                                                        <value name="CONTENT">
+                                                                          <block type="text_join" id="^S5FlsJc79*`CQ,4R18R">
+                                                                            <mutation items="3"></mutation>
+                                                                            <value name="ADD0">
+                                                                              <block type="text" id="1JN7qC;,pp5Hg_eO=u%1">
+                                                                                <field name="TEXT">Broadcast envoyé dans le salon </field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="ADD1">
+                                                                              <block type="s4d_get_channel" id="TkKNu}P8MU:[)U_N9oM*">
+                                                                                <field name="SEARCH_TYPE">ID</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="variables_get" id="gROzga_zfbtcQ{-[L;Xe">
+                                                                                    <field name="VAR" id="zC7crw}C9kWqO8jXuS5u">Salon de Broadcast</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="ADD2">
+                                                                              <block type="text" id="9$NIpJ^M-4.$/nT1eVO8">
+                                                                                <field name="TEXT"> !</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="CHANNEL">
+                                                                          <block type="s4d_message_channel" id="j_{(nRi{}@,@Te3~SDpV"></block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                            <statement name="CATCH">
+                                                              <block type="s4d_send_channel" id="]4m2YpYHU]zn`o|z0`6_">
+                                                                <value name="CONTENT">
+                                                                  <block type="text" id="b.xwu7`]qM*fRvB26q7m">
+                                                                    <field name="TEXT">Abandon de la commande Broadcast.</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="CHANNEL">
+                                                                  <block type="s4d_message_channel" id="[9d,Id`vjdU14lel%};K"></block>
+                                                                </value>
+                                                              </block>
+                                                            </statement>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                    <statement name="ELSE">
+                                                      <block type="s4d_send_channel" id="/eoNT+lEU8Cqj-_!IR!w">
+                                                        <value name="CONTENT">
+                                                          <block type="text" id="S.)5(RzfNG%sf`CnzcFn">
+                                                            <field name="TEXT">Cette couleur n'est pas reconnue. (**rouge**, **vert**, **jaune**, **bleu**, **blanc**)</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="CHANNEL">
+                                                          <block type="s4d_message_channel" id="g%`wJ#U%h(8mjE^2bV$2"></block>
+                                                        </value>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </statement>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </statement>
+                                <statement name="CATCH">
+                                  <block type="s4d_send_channel" id="IuWR+Tq*)FiCjz;v36b!">
+                                    <value name="CONTENT">
+                                      <block type="text" id="WbT.3B$CHgDJH+~?HaqE">
+                                        <field name="TEXT">Abandon de la commande Broadcast.</field>
+                                      </block>
+                                    </value>
+                                    <value name="CHANNEL">
+                                      <block type="s4d_message_channel" id="anFP/g%DApFqka6[C{B|"></block>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <statement name="CATCH">
+                          <block type="s4d_send_channel" id="+Fj|$+Nc140N_?_TWy]+">
+                            <value name="CONTENT">
+                              <block type="text" id="-p$~-IO;Su@N1d,o8Ds#">
+                                <field name="TEXT">Abandon de la commande Broadcast.</field>
+                              </block>
+                            </value>
+                            <value name="CHANNEL">
+                              <block type="s4d_message_channel" id="WZBnmS$mkU2U+1V9m+1m"></block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="CATCH">
+                  <block type="s4d_send_channel" id="9BX|vr6#DRj0FPYt?jEu">
+                    <value name="CONTENT">
+                      <block type="text" id="D-jZEm9VWKTImT3iuuGX">
+                        <field name="TEXT">Abandon de la commande Broadcast.</field>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id="qF[~%-1tjep8hw+Qj[^l"></block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="s4d_send_channel" id="h6[0/7Y~E;20+FZCTW3#">
+                <value name="CONTENT">
+                  <block type="text" id=")hT$y3j!K3SZI_u)^.EK">
+                    <field name="TEXT">Vous n'avez pas la permission de faire cette commande.</field>
+                  </block>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="$Tqq,X#,WRhYIr(BP}|j"></block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_connected" id="*/mdftd,/7|Oo%(FxE^b" x="1846" y="-404">
+    <statement name="STATEMENTS">
+      <block type="s4d_set_bot_game" id="!vCPhL3K~V/UcvjZj!*]">
+        <value name="GAME">
+          <block type="text" id="xhUfkT#OC_Y-6u5m@@oB">
+            <field name="TEXT">Season Sky V2 | f/help</field>
+          </block>
+        </value>
+        <next>
+          <block type="s4d_send_channel" id=":Z7O*o|LI[]VVreb[`!l">
+            <value name="CONTENT">
+              <block type="text" id="R`?Uc3SlDeH$%u4R6*!=">
+                <field name="TEXT">Bot on !</field>
+              </block>
+            </value>
+            <value name="CHANNEL">
+              <block type="s4d_get_channel" id="MWEdbS]EMQc(DKzPwo59">
+                <field name="SEARCH_TYPE">ID</field>
+                <value name="VALUE">
+                  <block type="text" id="b)Px#;jMRL9Nyv{H%3yQ">
+                    <field name="TEXT">860203127306584094</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_login" id=")O7+PL3eS1Br}h;?X9N$" x="130" y="-216">
+    <value name="TOKEN">
+      <block type="text" id="a7JxIIyK[Yr~TPL^-{W:">
+        <field name="TEXT">ODYwMTgxOTY4NDM5MjE0MTAw.YN3g4g.M29w2Lt5kBLBG3tjmU1q4xc9WaE</field>
+      </block>
+    </value>
+  </block>
+  <block type="s4d_on_message" id="73ovJZC+oRbe`X}S{[V3" x="5265" y="-435">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="ASY9duJZK|`+PC4LL(8S">
+        <value name="IF0">
+          <block type="logic_compare" id="nY+93IV3FOvh%Scav~V5">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="g5Fw%:td(682R)VlJkSV"></block>
+            </value>
+            <value name="B">
+              <block type="text" id=".P)axl9qJk{LNkZq6tnR">
+                <field name="TEXT">f/repondre</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id=":HDnLay?Ebb0miLbMp9,">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="!H1/I/u7aAa*}{*.g8-I">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_channel_raw" id="9HDQ!_/@$@8N)yYXMD:j">
+                    <field name="SEARCH_TYPE">ID</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="B5feV?HY+]d$]Wea|g]:">
+                    <field name="TEXT">860500752221208596</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="s4d_send_wait_reply" id="J0jxl3z-QSLoD4PSaNiy">
+                <value name="CONTENT">
+                  <shadow type="text" id="Yz;+19(d*)BCi!qc*Ost">
+                    <field name="TEXT">Quel est le nom du panel ?</field>
+                  </shadow>
+                  <block type="text_join" id="e~%_WJjF+pO$-!dQ+XFL">
+                    <mutation items="3"></mutation>
+                    <value name="ADD0">
+                      <block type="s4d_message_author_raw" id="F0OuoHhg^9I]apIQgYts">
+                        <field name="SEARCH_TYPE">USERNAME</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id="*t^wZZ}i[Jq(IKpUkL-M">
+                        <field name="TEXT"> </field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id=",lhgaoy[o0WDpi1(s|s2">
+                        <field name="TEXT">quel est le contenu de la suggestion ?</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="/L[{,p1~%`0lofTWh7_n"></block>
+                </value>
+                <value name="MEMBER">
+                  <block type="s4d_message_author" id="WA$4ogi9t,gan@tlhzX{"></block>
+                </value>
+                <value name="TIME">
+                  <shadow type="math_number" id="P|svu8/Ps|nMEIbe%,|G">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <statement name="THEN">
+                  <block type="variables_set" id="TH^bN4L5MqY#b#VWlz|A">
+                    <field name="VAR" id="3~l49lml8}Mi,=aP;*45">Réponses suggestions (contenu)</field>
+                    <value name="VALUE">
+                      <block type="s4d_send_wait_reply_value" id="Wtr%HTlzls1h}J5V{1k/"></block>
+                    </value>
+                    <next>
+                      <block type="s4d_send_wait_reply" id="8X$@Lz$kVl(.8C^A-VX9">
+                        <value name="CONTENT">
+                          <shadow type="text" id="UwKGi`Kae5~qk?sT+f^b">
+                            <field name="TEXT">Quel est votre prénom ?</field>
+                          </shadow>
+                          <block type="text_join" id="V%x!k4_MM+1v6u.ZK:tP">
+                            <mutation items="3"></mutation>
+                            <value name="ADD0">
+                              <block type="s4d_message_author_raw" id="g=E4gCL~H|FveP$`@Dj!">
+                                <field name="SEARCH_TYPE">USERNAME</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="text" id="=LgtTD+iIg[-#Vo=s@~O">
+                                <field name="TEXT"> </field>
+                              </block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="text" id="!fdsu_qb+?bqv.zvD.=m">
+                                <field name="TEXT">quel est le pseudo du joueur ?</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="CHANNEL">
+                          <block type="s4d_message_channel" id="tP1A|$[rS#Xgc82YW99B"></block>
+                        </value>
+                        <value name="MEMBER">
+                          <block type="s4d_message_author" id="3VZK5+H7UfciqN1JF64k"></block>
+                        </value>
+                        <value name="TIME">
+                          <shadow type="math_number" id="/G=YmK/KUS;q#9PYJ;c@">
+                            <field name="NUM">5</field>
+                          </shadow>
+                        </value>
+                        <statement name="THEN">
+                          <block type="variables_set" id="(p2PVVKW/ef7KEvg|%T!">
+                            <field name="VAR" id="4~,2o|(`}awCr.W.*B0H">Réponses suggestions (id créateur)</field>
+                            <value name="VALUE">
+                              <block type="s4d_send_wait_reply_value" id="Fv4P/~sOHw]mRjrR[37!"></block>
+                            </value>
+                            <next>
+                              <block type="s4d_send_wait_reply" id=".sR+?H6ye$tXLr+c]l~:">
+                                <value name="CONTENT">
+                                  <shadow type="text">
+                                    <field name="TEXT">Quel est votre prénom ?</field>
+                                  </shadow>
+                                  <block type="text_join" id="TcY{-gh/!k:7b.XxO9hN">
+                                    <mutation items="3"></mutation>
+                                    <value name="ADD0">
+                                      <block type="s4d_message_author_raw" id="w`*(~,za-PT,x:Uf{l,z">
+                                        <field name="SEARCH_TYPE">USERNAME</field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="|[U%$3~uuf].h/-CP8HV">
+                                        <field name="TEXT"> </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD2">
+                                      <block type="text" id="ey%jV!dxwWL|Q1nO7+?J">
+                                        <field name="TEXT">quel est votre réponse à la suggestion ?</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_message_channel" id="uKwDfJ0}S4!#2_V5!LzU"></block>
+                                </value>
+                                <value name="MEMBER">
+                                  <block type="s4d_message_author" id="~Z3;!Thu@1r)P}0=J$i9"></block>
+                                </value>
+                                <value name="TIME">
+                                  <shadow type="math_number" id="X[erwdaoRg`ztAC#4myH">
+                                    <field name="NUM">5</field>
+                                  </shadow>
+                                </value>
+                                <statement name="THEN">
+                                  <block type="variables_set" id="jVuXIOCG#7QO{#Ht_aO-">
+                                    <field name="VAR" id="c=|4$nn]^u+h7BdP.HP:">Réponses suggestion (raison)</field>
+                                    <value name="VALUE">
+                                      <block type="s4d_send_wait_reply_value" id="0cv{?RKb!-9MXEpOF~sd"></block>
+                                    </value>
+                                    <next>
+                                      <block type="s4d_send_channel" id="10jRpX?bN8:F[MF#w_Xz">
+                                        <value name="CONTENT">
+                                          <block type="s4d_message_embed" id="Y-n:i~WUdEuo,CW9Dr#_">
+                                            <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                                            <value name="MESSAGE">
+                                              <block type="text_join" id="As}k`}(~#M=:8yH8t7w#">
+                                                <mutation items="11"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="text" id="}w!faOXu3zH`~A,M_5Y1">
+                                                    <field name="TEXT">Suggestion proposée : </field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="s4d_newline" id="@dGB64%5@s7J3iq6j~Em"></block>
+                                                </value>
+                                                <value name="ADD2">
+                                                  <block type="s4d_newline" id="!`EW9$?)8(f*h)iysX[5"></block>
+                                                </value>
+                                                <value name="ADD3">
+                                                  <block type="variables_get" id="Vgq53HeWZ{BMgp%~Db$N">
+                                                    <field name="VAR" id="3~l49lml8}Mi,=aP;*45">Réponses suggestions (contenu)</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD4">
+                                                  <block type="s4d_newline" id="z:o4MWZ|?{#I|#`etYWf"></block>
+                                                </value>
+                                                <value name="ADD5">
+                                                  <block type="s4d_newline" id=".Ca%@Oo4m*Z2-vY0b;IP"></block>
+                                                </value>
+                                                <value name="ADD6">
+                                                  <block type="text" id="A[9,g-P`:MuVDX?xAn/S">
+                                                    <field name="TEXT">Réponse attribuée : </field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD7">
+                                                  <block type="s4d_newline" id="na][!W1+4WW|#*.HA(oW"></block>
+                                                </value>
+                                                <value name="ADD8">
+                                                  <block type="s4d_newline" id="FA_c#J??U,z)Grq/--uW"></block>
+                                                </value>
+                                                <value name="ADD9">
+                                                  <block type="variables_get" id="j$#^rd:-0X6mLIF7Mvco">
+                                                    <field name="VAR" id="c=|4$nn]^u+h7BdP.HP:">Réponses suggestion (raison)</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD10">
+                                                  <block type="s4d_newline" id="hYFs$8rMnzZ+F!)c5Sh)"></block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="COLOR">
+                                              <block type="colour_picker" id="8lDil!`F)]dgM.Xf]bBb">
+                                                <field name="COLOUR">#ffffff</field>
+                                              </block>
+                                            </value>
+                                            <value name="TITLE">
+                                              <block type="text_join" id="V_9?@6n8#_U.uN#XCr@+">
+                                                <mutation items="3"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="text" id="F`Q|-wGIrzFS]iTbey[S">
+                                                    <field name="TEXT">Réponse à la suggestion de </field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="variables_get" id="XaM8PVOo(0GvSIVfG%M`">
+                                                    <field name="VAR" id="4~,2o|(`}awCr.W.*B0H">Réponses suggestions (id créateur)</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD2">
+                                                  <block type="text" id="WQk:0a?SSoTLrD#{fY)|">
+                                                    <field name="TEXT"> !</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="FOOTER">
+                                              <block type="text" id="*c$k069771kn]_9QFq-|">
+                                                <field name="TEXT">FarmeLand | Créez vous aussi votre suggestion !</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="CHANNEL">
+                                          <block type="s4d_get_channel" id="t_Drz;:=_]N`zV#nORC1">
+                                            <field name="SEARCH_TYPE">ID</field>
+                                            <value name="VALUE">
+                                              <block type="text" id="^:LZ2P9Y@G[_L|+EY[~@">
+                                                <field name="TEXT">860502275427139614</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <statement name="CATCH">
+                                  <block type="s4d_send_channel" id="V[sz-_!Qsr_L9}qTkrla">
+                                    <value name="CONTENT">
+                                      <block type="text" id="haacQ/zST.Brl3F1lzI-">
+                                        <field name="TEXT">Abandon de la réponse.</field>
+                                      </block>
+                                    </value>
+                                    <value name="CHANNEL">
+                                      <block type="s4d_message_channel" id="ABk.!~{.F%x*^+bA~@Vf"></block>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <statement name="CATCH">
+                          <block type="s4d_send_channel" id="bH84bIi8dFMux]D40o.8">
+                            <value name="CONTENT">
+                              <block type="text" id="#pGP5ovz=Z~{*eib=Gyz">
+                                <field name="TEXT">Abandon de la réponse.</field>
+                              </block>
+                            </value>
+                            <value name="CHANNEL">
+                              <block type="s4d_message_channel" id="HsF+f5z(:+{|]fnWICC`"></block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="CATCH">
+                  <block type="s4d_send_channel" id="1+Y^;svz!T.R)0[V=_VX">
+                    <value name="CONTENT">
+                      <block type="text" id="U#q[^i2bP(P!cec]0N=3">
+                        <field name="TEXT">Abandon de la réponse.</field>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id="?$3~+)3ic0aqP5jG!+h*"></block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="s4d_send_channel" id="FYfF|Nm{5Mi-l4|5LgEk">
+                <value name="CONTENT">
+                  <block type="text_join" id="PtjS?dYhvP1mmn*T7*~d">
+                    <mutation items="3"></mutation>
+                    <value name="ADD0">
+                      <block type="s4d_message_author_raw" id="k7vC--q~kRf(f;x1QDLt">
+                        <field name="SEARCH_TYPE">USERNAME</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id="yb_7aD|6Jl$p.Bs:+TTf">
+                        <field name="TEXT"> </field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="KV{+;XIZ{.?V-hQX3Wcp">
+                        <field name="TEXT">vous n'avez pas la permission de faire cette commande.</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="lt@I8(O[Y4S1%QCz~D8."></block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="Qx+aIDM=_,mj^tl$vGmW" x="-52" y="-114">
+    <statement name="STATEMENTS">
+      <block type="variables_set" id="x:oQ5#MDg]ci=2:la8Oi">
+        <field name="VAR" id="XT9#cS0Ojj,zkS0J(/uq">Salon message "&gt;"</field>
+        <value name="VALUE">
+          <block type="s4d_message_channel" id="kwgmR[Onb0=Ox7z!^bBM"></block>
+        </value>
+        <next>
+          <block type="controls_if" id="Cr$f.P2*Nq2Dl}?D!r`(">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="s4d_includes" id="IeK(7f58[#R5CfXMl*1R">
+                <value name="TEXT">
+                  <shadow type="text" id="eoFKx~^!:ONLB1HM(wU(">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="s4d_message_content" id="pyFMNvR6J#o6Ky/UA~]f"></block>
+                </value>
+                <value name="INCLUDES">
+                  <shadow type="text" id="`#O~moT-ENM)3{V-%f;Q">
+                    <field name="TEXT">m/</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="controls_if" id="NnOHI.nr5b[AQBJ7MX}L">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="s4d_includes" id="Al?2/_izTj1LQI4haC=s">
+                    <value name="TEXT">
+                      <shadow type="text" id="0O_P:K~E$jXURTiu=E[?">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="s4d_message_channel_raw" id="}wR)jl(7::V+)riZ*e,6">
+                        <field name="SEARCH_TYPE">NAME</field>
+                      </block>
+                    </value>
+                    <value name="INCLUDES">
+                      <shadow type="text" id="sZ|gk6IQ(4hO[=Og%auc">
+                        <field name="TEXT">ticket-</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <statement name="ELSE">
+                  <block type="s4d_wait_seconds" id=";k$~{D~meGsU3Xv]fZfT">
+                    <value name="TIME">
+                      <shadow type="math_number" id="6OmWInKM2gE61tD%`ey[">
+                        <field name="NUM">2</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="s4d_purge" id="x^ezWV%r8%Q,VtE1Xtp9">
+                        <value name="CHANNEL">
+                          <block type="variables_get" id="$Z?^xhbh]Tul9NCyNeY!">
+                            <field name="VAR" id="XT9#cS0Ojj,zkS0J(/uq">Salon message "&gt;"</field>
+                          </block>
+                        </value>
+                        <value name="AMOUNT">
+                          <shadow type="math_number" id="5[k;Rk5P4%Ux^]Rko`.S">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="s4d_wait_seconds" id="bO1v5]=,7ZFT1RcO204#">
+                            <value name="TIME">
+                              <shadow type="math_number" id="xkmUyD+6!_b3JG+*B5ym">
+                                <field name="NUM">2</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="s4d_reply" id="pS%44k7K*6DF1fO}4#+v">
+                                <value name="CONTENT">
+                                  <shadow type="text" id="D,dZoVseu@60j~AuW.C^">
+                                    <field name="TEXT">Ce n'est pas un salon pour ces commandes. Veuillez les faire dans le salon</field>
+                                  </shadow>
+                                  <block type="text_join" id="D:yUQr[:fOX8f0ZN,4,:">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="BF]+Wn#ma2{#k~q]owzb">
+                                        <field name="TEXT">Ce n'est pas un salon pour ces commandes. Veuillez les faire dans le salon </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="s4d_get_channel" id="OSMj,J17D_7e4EwhdK$q">
+                                        <field name="SEARCH_TYPE">ID</field>
+                                        <value name="VALUE">
+                                          <block type="text" id="S(nFCI;^DE#N5dCIX%zD">
+                                            <field name="TEXT">860171514074759188</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="~P~q=7D9xXaA_lp|u7]`" x="3615" y="82">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="1u=Y0kp2G^s5peZ){mOZ">
+        <value name="IF0">
+          <block type="logic_compare" id="J}K;^;_uymV4z:^E]e5j">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id=",6^LALoWe,Po*F,h1ihL"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="p6qWg%Z{C.EcBN?a]$Wx">
+                <field name="TEXT">f/clear</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="Jm1ZAKaB$C=Samh[AMn)">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="f.[_b9Wl(P3U+Dt#6p-o">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_author_raw" id="YFg_cK,W*wm^DX6J7|zX">
+                    <field name="SEARCH_TYPE">ID</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="v{CeSf-fA{Ww.p(V;VNF">
+                    <field name="TEXT">603609379605970965</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="s4d_purge" id="!),RJ-9aCZt`B[w=l4NF">
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="uq}]4T(m,(aU^O^K-^Iz"></block>
+                </value>
+                <value name="AMOUNT">
+                  <shadow type="math_number" id="id,/ZK7xJ{[~e|I~CsCo">
+                    <field name="NUM">100</field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="s4d_send_channel" id="L`MqMj$nI`Eq^K7_EGDX">
+                <value name="CONTENT">
+                  <block type="text" id="Dc/FSyw6kjf6@gM@Vm.-">
+                    <field name="TEXT">Vous n'avez pas la permission de faire cette commande.</field>
+                  </block>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="RIvnKJ8xU2LHTTCxQji@"></block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="+Q@qA4DZ.)H0dU~:qJFA" x="4413" y="314">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="3XA36VU);D_1N5vf9p(Z">
+        <value name="IF0">
+          <block type="logic_compare" id="1igBlMs)G_=BaFXSd3rc">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="(q2h_HuhqTH.gfrwM-(U"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="[P2gt2r%QKJF3|~Q$E~+">
+                <field name="TEXT">f/help</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_send_channel" id="HK2YTX6MwSetL7akJvIZ">
+            <value name="CONTENT">
+              <block type="s4d_message_embed" id="0]=osgemTTiS.4ZTy$KC">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                <value name="MESSAGE">
+                  <block type="text_join" id="R|x.@mf}i#xhZNrb61gr">
+                    <mutation items="17"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="o.V:V=K,hwphtPnWpov9">
+                        <field name="TEXT">**Commandes du bot**</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="s4d_newline" id="XbLzE2r7m=u#~cOf;iq2"></block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="s4d_newline" id="l|B#S5S)prftaGEe(HR`"></block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="text" id="*%:qqS*i6/|/GbW#r87|">
+                        <field name="TEXT">f/help</field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="s4d_newline" id="f+:$O0D=a^4a^oz7T@*s"></block>
+                    </value>
+                    <value name="ADD5">
+                      <block type="text" id="5_MFAQ^A%)jqc7I5tsY)">
+                        <field name="TEXT">f/ping</field>
+                      </block>
+                    </value>
+                    <value name="ADD6">
+                      <block type="s4d_newline" id="sPCOV~mbQ=QZz@0QMA$2"></block>
+                    </value>
+                    <value name="ADD7">
+                      <block type="text" id="#773u}Z?0wMU.=M(yy:}">
+                        <field name="TEXT">f/clear</field>
+                      </block>
+                    </value>
+                    <value name="ADD8">
+                      <block type="s4d_newline" id="/H,vb{H1|Dca3o:c,hBD"></block>
+                    </value>
+                    <value name="ADD9">
+                      <block type="text" id="2aiG^*2{ZcFkU-B=Oi5T">
+                        <field name="TEXT">f/aventure</field>
+                      </block>
+                    </value>
+                    <value name="ADD10">
+                      <block type="s4d_newline" id="wJWMC7U5QBY8gD5}P5eD"></block>
+                    </value>
+                    <value name="ADD11">
+                      <block type="text" id="RyEelWug{2f85mb-B7m6">
+                        <field name="TEXT">f/nick (quelques problèmes pour le moment)</field>
+                      </block>
+                    </value>
+                    <value name="ADD12">
+                      <block type="s4d_newline" id="|,e=czk6mQ0{:S09HZ/i"></block>
+                    </value>
+                    <value name="ADD13">
+                      <block type="s4d_newline" id="Rnm58lKXgwr.dHjLa8B$"></block>
+                    </value>
+                    <value name="ADD14">
+                      <block type="text" id="o:|SuhBFeS0g^UQRaTkm">
+                        <field name="TEXT">Ce bot est surtout là pour les annonces, et aider les joueurs. N'hésitez pas à faire une suggestion si vous avez des idées d'ajouts pour le bot.</field>
+                      </block>
+                    </value>
+                    <value name="ADD15">
+                      <block type="s4d_newline" id="()%:Yr]e6z%5h=R4eR{?"></block>
+                    </value>
+                    <value name="ADD16">
+                      <block type="text" id="B,Rn4c:n@ng)xG-hBlpe">
+                        <field name="TEXT">``Préfixe : f/`` </field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="COLOR">
+                  <block type="colour_picker" id="1,i$+e?k:EvD]analQb.">
+                    <field name="COLOUR">#009900</field>
+                  </block>
+                </value>
+                <value name="TITLE">
+                  <block type="text" id="XTi=w,nMz-WVHA06dO(9">
+                    <field name="TEXT">Aide commande</field>
+                  </block>
+                </value>
+                <value name="FOOTER">
+                  <block type="text" id="W,@%0QV%1zOdl;l~R/BL">
+                    <field name="TEXT">FarmeLand | Season Sky V2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="CHANNEL">
+              <block type="s4d_message_channel" id=")/z5m:aG2@tU)A0_jY|n"></block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="l)Sshb:X;6%u$%*_cj4I" x="2824" y="478">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="KCI};)C@JfH#Ld_DNrg:">
+        <value name="IF0">
+          <block type="logic_compare" id="U0~p~tk%6N-0Dq#OJ4e=">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="E`8K#cPu}bd[W!mm`(.H"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="U1slwEecMWPL-svZ(z:3">
+                <field name="TEXT">f/aventure</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_send_channel" id="=O;jYCq1nW)SDl?oa4I*">
+            <value name="CONTENT">
+              <block type="text_join" id="o8*EQ45H75/n-+YHgJms">
+                <mutation items="4"></mutation>
+                <value name="ADD0">
+                  <block type="s4d_message_author_raw" id="O4o~gAE@8L*URkuV{)dp">
+                    <field name="SEARCH_TYPE">USERNAME</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="text" id="#P!?|$Cq$jQxMT6ozbZj">
+                    <field name="TEXT"> afin de commencer ton aventure, tu dois te rendre dans le channel </field>
+                  </block>
+                </value>
+                <value name="ADD2">
+                  <block type="s4d_get_channel" id="A54zQg`cF#Uy}89[u9ZF">
+                    <field name="SEARCH_TYPE">ID</field>
+                    <value name="VALUE">
+                      <block type="text" id="o-Oj|h?LG4}{^k(-+`/W">
+                        <field name="TEXT">860171514074759188</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="ADD3">
+                  <block type="text" id="zdL8g^TW_Lc1O,yFa$jM">
+                    <field name="TEXT">, là-bas tu pourras commencer à farmer !</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="CHANNEL">
+              <block type="s4d_message_channel" id=".5oS7X-@byLG}z*BB.5Y"></block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="M{++4SX18{m!abosWts%" x="3629" y="607">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="gekg!^?eMGFf?CFtedyb">
+        <value name="IF0">
+          <block type="logic_compare" id="U@T!P8(8$KI0b~5.5OS#">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="W/sspC%t#VY!g^Dc,%O="></block>
+            </value>
+            <value name="B">
+              <block type="text" id="?89BYMwlc-6(|=tzZVGD">
+                <field name="TEXT">f/g</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_send_channel" id="/|%rU^Z#8Z:v8[wF92vb">
+            <value name="CONTENT">
+              <block type="text" id="jLgJYGf~=6!wYmW}E$o.">
+                <field name="TEXT">Lancement de l'interaction pour commencer un concours !</field>
+              </block>
+            </value>
+            <value name="CHANNEL">
+              <block type="s4d_message_channel" id="2RY%tmu=-2i[rV,psn]g"></block>
+            </value>
+            <next>
+              <block type="s4d_send_wait_reply" id=";^0QjT.]I}yG*NIo=k*L">
+                <value name="CONTENT">
+                  <shadow type="text" id="qW2gLLUEAlPR1w!L*gM#">
+                    <field name="TEXT">Dans quel salon le concours doit se faire ? (Donner l'identifiant)</field>
+                  </shadow>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="/$x2TzA}.A0AG*Dn#%s="></block>
+                </value>
+                <value name="MEMBER">
+                  <block type="s4d_message_author" id="4*tB9m0i~yD*2E)co8*s"></block>
+                </value>
+                <value name="TIME">
+                  <shadow type="math_number" id="I@0m{YylYDLPfNA+bydc">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <statement name="THEN">
+                  <block type="variables_set" id="^0RP}j{dNEiU-$A6Dl)#">
+                    <field name="VAR" id="BsvogW)Q:sUyJ%7~B_mN">Concours (Salon)</field>
+                    <value name="VALUE">
+                      <block type="s4d_send_wait_reply_value" id=";sInypd3G~bFd-@,5=%%"></block>
+                    </value>
+                    <next>
+                      <block type="s4d_send_channel" id=",dD.xa{j=(~K$cR`$Ufr">
+                        <value name="CONTENT">
+                          <block type="text" id="Jdo@~r6TIL(TA$|iw//U">
+                            <field name="TEXT">Salon sauvegardé !</field>
+                          </block>
+                        </value>
+                        <value name="CHANNEL">
+                          <block type="s4d_message_channel" id="IN}|pysh1%[]hGG?IVH2"></block>
+                        </value>
+                        <next>
+                          <block type="s4d_send_wait_reply" id="%HYzX]p%DEALvKAS]Cgh">
+                            <value name="CONTENT">
+                              <shadow type="text" id="72$2I5PGQU^Tu1%9WcqQ">
+                                <field name="TEXT">Quel est le titre du concours ?</field>
+                              </shadow>
+                            </value>
+                            <value name="CHANNEL">
+                              <block type="s4d_message_channel" id="S)*3_G1owW!GxIUgWl1j"></block>
+                            </value>
+                            <value name="MEMBER">
+                              <block type="s4d_message_author" id="QFrlKH2Z+6b_jJ,7mZFS"></block>
+                            </value>
+                            <value name="TIME">
+                              <shadow type="math_number" id="^=!l?I1/J},0OsZO(3rT">
+                                <field name="NUM">5</field>
+                              </shadow>
+                            </value>
+                            <statement name="THEN">
+                              <block type="variables_set" id=";q.EE~2?zr;9+!ot3U+U">
+                                <field name="VAR" id="3L2$E3|450QybS3G98_Y">Concours (Titre)</field>
+                                <value name="VALUE">
+                                  <block type="s4d_send_wait_reply_value" id="~6RSOZ1%w4,CBzvYv?m7"></block>
+                                </value>
+                                <next>
+                                  <block type="s4d_send_channel" id="MV.nK[e9J^$jNvsm/6ep">
+                                    <value name="CONTENT">
+                                      <block type="text_join" id="q-*Vuv]1nkcO-/%rP$sm">
+                                        <mutation items="3"></mutation>
+                                        <value name="ADD0">
+                                          <block type="text" id="gJHK5UM[L9/;`8RM.Grm">
+                                            <field name="TEXT">Titre accepté " </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD1">
+                                          <block type="variables_get" id="1ji*=*r_!,9=b9Ra})z/">
+                                            <field name="VAR" id="3L2$E3|450QybS3G98_Y">Concours (Titre)</field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD2">
+                                          <block type="text" id="wiNz=51YmTBfVlg-}V_a">
+                                            <field name="TEXT">" !</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="CHANNEL">
+                                      <block type="s4d_message_channel" id="]K7YaA!jyYv:A+w5s]wk"></block>
+                                    </value>
+                                    <next>
+                                      <block type="s4d_send_wait_reply" id=",za@h#$W2#x}wNk+]PfE">
+                                        <value name="CONTENT">
+                                          <shadow type="text" id="Kzn6_+axfm.A`f(yK6dS">
+                                            <field name="TEXT">Combien de gagnant(s) ? (4 max)</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="CHANNEL">
+                                          <block type="s4d_message_channel" id="qjz$D%1W)@$XC!Z%%rG;"></block>
+                                        </value>
+                                        <value name="MEMBER">
+                                          <block type="s4d_message_author" id="0alo9rUf;.Yz%#4IF`n;"></block>
+                                        </value>
+                                        <value name="TIME">
+                                          <shadow type="math_number" id="R)xnosbVkcV2!MkYsPp,">
+                                            <field name="NUM">5</field>
+                                          </shadow>
+                                        </value>
+                                        <statement name="THEN">
+                                          <block type="variables_set" id="M~kGX++M2kv8*w28$+I3">
+                                            <field name="VAR" id="u|?*4[-_C^/(~QzTWFe[">Concours (Nombre de gagants)</field>
+                                            <value name="VALUE">
+                                              <block type="s4d_send_wait_reply_value" id="=4OA3=uOiMs)VfD%h={J"></block>
+                                            </value>
+                                            <next>
+                                              <block type="s4d_send_channel" id="WVEOd^i[hOJV|%zD~N0A">
+                                                <value name="CONTENT">
+                                                  <block type="text" id="?eP$6#Fd|hvFFp!!p^p?">
+                                                    <field name="TEXT">🎉 CONCOURS 🎉</field>
+                                                  </block>
+                                                </value>
+                                                <value name="CHANNEL">
+                                                  <block type="s4d_get_channel" id="[GA)[@Ix$a/GOKgXVWIP">
+                                                    <field name="SEARCH_TYPE">ID</field>
+                                                    <value name="VALUE">
+                                                      <block type="variables_get" id="a%W::#UHPy]OCbG{+Na}">
+                                                        <field name="VAR" id="BsvogW)Q:sUyJ%7~B_mN">Concours (Salon)</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="s4d_send_channel" id="QZ)P[pu3Yoq!)BA5N#jv">
+                                                    <value name="CONTENT">
+                                                      <block type="s4d_message_embed" id="WcOmo2PJm3=ABh+R^gwT">
+                                                        <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                                                        <value name="MESSAGE">
+                                                          <block type="text_join" id="Pmpv+lYW8K/FMwJbs{~Z">
+                                                            <mutation items="5"></mutation>
+                                                            <value name="ADD0">
+                                                              <block type="text" id="dH9$L+z7nr:MSzHSTidI">
+                                                                <field name="TEXT">Réagissez avec 🎉 pour participer !</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="ADD1">
+                                                              <block type="s4d_newline" id="/.TZ@N8[I;w@el5]-6~3"></block>
+                                                            </value>
+                                                            <value name="ADD2">
+                                                              <block type="text" id="HBP/)DGDtVp`EY4=3+v(">
+                                                                <field name="TEXT">Durée : 1h</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="ADD3">
+                                                              <block type="s4d_newline" id="%arw=zPzT`}d(rcta)VB"></block>
+                                                            </value>
+                                                            <value name="ADD4">
+                                                              <block type="text" id="GbuX|BBTY:.ddmfsnw:X">
+                                                                <field name="TEXT">Lancé par Kyllian49</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <value name="COLOR">
+                                                          <block type="colour_picker" id="Y#3$fQl]bSGVi8R73JDM">
+                                                            <field name="COLOUR">#993399</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="TITLE">
+                                                          <block type="variables_get" id="r_#wKfT~%w[%7h#$b?`^">
+                                                            <field name="VAR" id="3L2$E3|450QybS3G98_Y">Concours (Titre)</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="FOOTER">
+                                                          <block type="text_join" id="HMFE?]Ow|5Y_)R}vz6r!">
+                                                            <mutation items="2"></mutation>
+                                                            <value name="ADD0">
+                                                              <block type="variables_get" id="3G$B;n94M=);VfB=/{PA">
+                                                                <field name="VAR" id="u|?*4[-_C^/(~QzTWFe[">Concours (Nombre de gagants)</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="ADD1">
+                                                              <block type="text" id="4x?gI=QU+2*l(~T6cB@3">
+                                                                <field name="TEXT"> gagnant(s) | FarmeLand</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="CHANNEL">
+                                                      <block type="s4d_get_channel" id="qbh~%?.CbFu/YUt;g`St">
+                                                        <field name="SEARCH_TYPE">ID</field>
+                                                        <value name="VALUE">
+                                                          <block type="variables_get" id="Z1^1p5QZSymqa8xgERFb">
+                                                            <field name="VAR" id="BsvogW)Q:sUyJ%7~B_mN">Concours (Salon)</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="s4d_send_channel" id="VG?Pw=92e]rzVv0ZC%gL">
+                                                        <value name="CONTENT">
+                                                          <block type="text" id="{x2ZdfnPs1^thP:g0I*l">
+                                                            <field name="TEXT">Concours crée !</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="CHANNEL">
+                                                          <block type="s4d_message_channel" id="z8vMZ:`gt+qhvXN-:05h"></block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="s4d_wait_seconds" id="7JbHAyrrTo1u8p4Du19Q">
+                                                            <value name="TIME">
+                                                              <shadow type="math_number" id="_;/^6=:J:Z%.3))j(3iB">
+                                                                <field name="NUM">30</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <next>
+                                                              <block type="controls_if" id="vTZLzs6muq^@}$p;db~@">
+                                                                <mutation else="1"></mutation>
+                                                                <value name="IF0">
+                                                                  <block type="logic_compare" id="R?*;:StMt{6jOZLxycG!">
+                                                                    <field name="OP">EQ</field>
+                                                                    <value name="A">
+                                                                      <block type="variables_get" id="d}|I?26,5xMK+g|e:_x^">
+                                                                        <field name="VAR" id="u|?*4[-_C^/(~QzTWFe[">Concours (Nombre de gagants)</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <block type="text" id="?WwcX4K%LG*E?BaZREWx">
+                                                                        <field name="TEXT">1</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <statement name="DO0">
+                                                                  <block type="s4d_send_channel" id="D4DDAJ)Q|^1r4]UcpIRq">
+                                                                    <value name="CONTENT">
+                                                                      <block type="text_join" id=";Bk43+1?1LF3b$?Ux:b{">
+                                                                        <mutation items="3"></mutation>
+                                                                        <value name="ADD0">
+                                                                          <block type="text" id="e/6)71XCb2K32mA?o0[.">
+                                                                            <field name="TEXT">Gagnant du concours </field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                          <block type="lists_getIndex" id="}fUT:.s;oo%C:Qo?l)pF">
+                                                                            <mutation statement="false" at="false"></mutation>
+                                                                            <field name="MODE">GET_REMOVE</field>
+                                                                            <field name="WHERE">RANDOM</field>
+                                                                            <value name="VALUE">
+                                                                              <block type="variables_get" id="9Y8W4ttlLm1tk.=JsP:3">
+                                                                                <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="ADD2">
+                                                                          <block type="text" id="4(KLe8YFvsD}2U0H/_Qr">
+                                                                            <field name="TEXT">.</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="CHANNEL">
+                                                                      <block type="s4d_get_channel" id="B%?KY8bRK4|hPBR;KY1|">
+                                                                        <field name="SEARCH_TYPE">ID</field>
+                                                                        <value name="VALUE">
+                                                                          <block type="variables_get" id="*XJqx!^[OqBc65h$2Cd/">
+                                                                            <field name="VAR" id="BsvogW)Q:sUyJ%7~B_mN">Concours (Salon)</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </statement>
+                                                                <statement name="ELSE">
+                                                                  <block type="controls_if" id="K/Zk^9lIlH_f$uBZBk*U">
+                                                                    <mutation else="1"></mutation>
+                                                                    <value name="IF0">
+                                                                      <block type="logic_compare" id="H.oro-W:Rq}D?j]C4ku4">
+                                                                        <field name="OP">EQ</field>
+                                                                        <value name="A">
+                                                                          <block type="variables_get" id="e[MEn.U1YN]qCgRw@T^M">
+                                                                            <field name="VAR" id="u|?*4[-_C^/(~QzTWFe[">Concours (Nombre de gagants)</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="text" id="Q?GMG$QqEGMI~^^[DT6#">
+                                                                            <field name="TEXT">2</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <statement name="DO0">
+                                                                      <block type="s4d_send_channel" id="uY[;CYChx1A6NF2%Ecf+">
+                                                                        <value name="CONTENT">
+                                                                          <block type="text_join" id="xrQ_cl8s6|C=qS=Hd14D">
+                                                                            <mutation items="5"></mutation>
+                                                                            <value name="ADD0">
+                                                                              <block type="text" id="/QVXMZCWiyP$+P$;+},W">
+                                                                                <field name="TEXT">Gagnants du concours </field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="ADD1">
+                                                                              <block type="lists_getIndex" id="r9#3(1.?=0yEH{1`,:y`">
+                                                                                <mutation statement="false" at="false"></mutation>
+                                                                                <field name="MODE">GET_REMOVE</field>
+                                                                                <field name="WHERE">RANDOM</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="variables_get" id="@OH{h;L@4d_{=tFGXSUX">
+                                                                                    <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="ADD2">
+                                                                              <block type="text" id="t!A^C]-tp#t9|nR9p4fI">
+                                                                                <field name="TEXT">, </field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="ADD3">
+                                                                              <block type="lists_getIndex" id="R;/3$^E4q5P10Ve!q6|V">
+                                                                                <mutation statement="false" at="false"></mutation>
+                                                                                <field name="MODE">GET_REMOVE</field>
+                                                                                <field name="WHERE">RANDOM</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="variables_get" id="%azLO`wjXXRzWs(}R0y9">
+                                                                                    <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="ADD4">
+                                                                              <block type="text" id="+w25RPr=6PttTcI.:|w=">
+                                                                                <field name="TEXT">.</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="CHANNEL">
+                                                                          <block type="s4d_get_channel" id="WW#oiRBMreiu6Bd}LQ=z">
+                                                                            <field name="SEARCH_TYPE">ID</field>
+                                                                            <value name="VALUE">
+                                                                              <block type="variables_get" id="f`wNn:[2=4hf_=wPl/cS">
+                                                                                <field name="VAR" id="BsvogW)Q:sUyJ%7~B_mN">Concours (Salon)</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </statement>
+                                                                    <statement name="ELSE">
+                                                                      <block type="controls_if" id="K-CuAk/:=)I7NV)8~T*7">
+                                                                        <mutation else="1"></mutation>
+                                                                        <value name="IF0">
+                                                                          <block type="logic_compare" id="MC1$;91Rf#%*DOFfhK1w">
+                                                                            <field name="OP">EQ</field>
+                                                                            <value name="A">
+                                                                              <block type="variables_get" id="Qsk-*[s:Oh5PBa~KxiU?">
+                                                                                <field name="VAR" id="u|?*4[-_C^/(~QzTWFe[">Concours (Nombre de gagants)</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <block type="text" id=";zFTqF8@lDqN+`YfXRf~">
+                                                                                <field name="TEXT">3</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <statement name="DO0">
+                                                                          <block type="s4d_send_channel" id="Li.,{Cr~=l~%ft*z,dYF">
+                                                                            <value name="CONTENT">
+                                                                              <block type="text_join" id="K%4jLyK9^eloGwd*?aRh">
+                                                                                <mutation items="7"></mutation>
+                                                                                <value name="ADD0">
+                                                                                  <block type="text" id="0TWCaW/PdD^bSvb+)U2[">
+                                                                                    <field name="TEXT">Gagnants du concours </field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="ADD1">
+                                                                                  <block type="lists_getIndex" id="Vaew0ik@pF#yhY2~_$_Y">
+                                                                                    <mutation statement="false" at="false"></mutation>
+                                                                                    <field name="MODE">GET_REMOVE</field>
+                                                                                    <field name="WHERE">RANDOM</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="variables_get" id="1N;EI$CgmWUeo@nnu5.R">
+                                                                                        <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="ADD2">
+                                                                                  <block type="text" id="{8%%OYK:kylTVUh.z^L4">
+                                                                                    <field name="TEXT">, </field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="ADD3">
+                                                                                  <block type="lists_getIndex" id="V0lcJy9$/eWUnc|MZw)a">
+                                                                                    <mutation statement="false" at="false"></mutation>
+                                                                                    <field name="MODE">GET_REMOVE</field>
+                                                                                    <field name="WHERE">RANDOM</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="variables_get" id="~4w:MO0^,Ysv)ns%$x7L">
+                                                                                        <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="ADD4">
+                                                                                  <block type="text" id="kplZnZrfq#gIf^x;w4g$">
+                                                                                    <field name="TEXT">, </field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="ADD5">
+                                                                                  <block type="lists_getIndex" id="X/DEI09joX7zo,Nr.p%N">
+                                                                                    <mutation statement="false" at="false"></mutation>
+                                                                                    <field name="MODE">GET_REMOVE</field>
+                                                                                    <field name="WHERE">RANDOM</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="variables_get" id="co@vzuAz=1%*RzIQpM6v">
+                                                                                        <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="ADD6">
+                                                                                  <block type="text" id="so~4]frpfm|mI8{kjz3G">
+                                                                                    <field name="TEXT">.</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="CHANNEL">
+                                                                              <block type="s4d_get_channel" id="=}F3wqkzFI0WkzSC6?;c">
+                                                                                <field name="SEARCH_TYPE">ID</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="variables_get" id="Ej[@IJukiW3T/A2x=0!T">
+                                                                                    <field name="VAR" id="BsvogW)Q:sUyJ%7~B_mN">Concours (Salon)</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </statement>
+                                                                        <statement name="ELSE">
+                                                                          <block type="controls_if" id="_]X3n5bG}?#^wToTw~+O">
+                                                                            <value name="IF0">
+                                                                              <block type="logic_compare" id="Rf7|:]#q-J4J|yzQENr-">
+                                                                                <field name="OP">EQ</field>
+                                                                                <value name="A">
+                                                                                  <block type="variables_get" id="`yQDz{DONp6[lU~E6aLr">
+                                                                                    <field name="VAR" id="u|?*4[-_C^/(~QzTWFe[">Concours (Nombre de gagants)</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <block type="text" id="Fwtg0pAUSn~byt+zQ9TI">
+                                                                                    <field name="TEXT">4</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="DO0">
+                                                                              <block type="s4d_send_channel" id="#wf|X*5r%~1[SlEMZ^_4">
+                                                                                <value name="CONTENT">
+                                                                                  <block type="text_join" id="S{gLj1w3diuB?WxHcBc/">
+                                                                                    <mutation items="9"></mutation>
+                                                                                    <value name="ADD0">
+                                                                                      <block type="text" id="2mQ*/2t9.(Fv%[[_1;ox">
+                                                                                        <field name="TEXT">Gagnants du concours </field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="ADD1">
+                                                                                      <block type="lists_getIndex" id="`T2a,s]-+XCVq!_e!reP">
+                                                                                        <mutation statement="false" at="false"></mutation>
+                                                                                        <field name="MODE">GET_REMOVE</field>
+                                                                                        <field name="WHERE">RANDOM</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="variables_get" id="W|3=#YG0{cx+#mL+SbsC">
+                                                                                            <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="ADD2">
+                                                                                      <block type="text" id="a^3ui}h7QBR-/#F]{?b,">
+                                                                                        <field name="TEXT">, </field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="ADD3">
+                                                                                      <block type="lists_getIndex" id="?acyhgSZ2.C#UsPWO$f-">
+                                                                                        <mutation statement="false" at="false"></mutation>
+                                                                                        <field name="MODE">GET_REMOVE</field>
+                                                                                        <field name="WHERE">RANDOM</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="variables_get" id="[Pj~GH^Rr5;vl@)YK?)1">
+                                                                                            <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="ADD4">
+                                                                                      <block type="text" id="t=7,6iV_jWx(=GCKj][)">
+                                                                                        <field name="TEXT">, </field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="ADD5">
+                                                                                      <block type="lists_getIndex" id="eFst$.Uc)(=ZNQ)RhpwB">
+                                                                                        <mutation statement="false" at="false"></mutation>
+                                                                                        <field name="MODE">GET_REMOVE</field>
+                                                                                        <field name="WHERE">RANDOM</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="variables_get" id="V,M44qrR=w+}+@|HiYO$">
+                                                                                            <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="ADD6">
+                                                                                      <block type="text" id="1}Z0+vaJ9EFBM7l~MO5e">
+                                                                                        <field name="TEXT">, </field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="ADD7">
+                                                                                      <block type="lists_getIndex" id="%K28O^K/??9z?Z[nM+mE">
+                                                                                        <mutation statement="false" at="false"></mutation>
+                                                                                        <field name="MODE">GET_REMOVE</field>
+                                                                                        <field name="WHERE">RANDOM</field>
+                                                                                        <value name="VALUE">
+                                                                                          <block type="variables_get" id="1mE}5$:CfpyuPwwzrhXD">
+                                                                                            <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="ADD8">
+                                                                                      <block type="text" id="Fwo$NQpgzUkPoZ!^F3UA">
+                                                                                        <field name="TEXT">.</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="CHANNEL">
+                                                                                  <block type="s4d_get_channel" id="PweaG7a,35@Jq^nhCJv.">
+                                                                                    <field name="SEARCH_TYPE">ID</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="variables_get" id="ZYJSXxhJVfj4:=jOlo8w">
+                                                                                        <field name="VAR" id="BsvogW)Q:sUyJ%7~B_mN">Concours (Salon)</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </statement>
+                                                                          </block>
+                                                                        </statement>
+                                                                      </block>
+                                                                    </statement>
+                                                                  </block>
+                                                                </statement>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <statement name="CATCH">
+                                          <block type="s4d_send_channel" id="}.Nqst|+uydAU)`VgHKZ">
+                                            <value name="CONTENT">
+                                              <block type="text" id="myN2;y7;)m22HWrtaW9[">
+                                                <field name="TEXT">Abandon de la création concours.</field>
+                                              </block>
+                                            </value>
+                                            <value name="CHANNEL">
+                                              <block type="s4d_message_channel" id="svCwrfo]Qj7Lp@Hmr.X."></block>
+                                            </value>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <statement name="CATCH">
+                              <block type="s4d_send_channel" id="FrtOLb=oCiM[5)HeOPV:">
+                                <value name="CONTENT">
+                                  <block type="text" id="mLh(ob}-FlP*1d~xx*x,">
+                                    <field name="TEXT">Abandon de la création concours.</field>
+                                  </block>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_message_channel" id="[Zj@BTh%ASzE~N41_:yD"></block>
+                                </value>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="CATCH">
+                  <block type="s4d_send_channel" id="[Jfs_PNV^dgt4@=:A;4C">
+                    <value name="CONTENT">
+                      <block type="text" id="c-wraDx!/8iQgw1[=Nkm">
+                        <field name="TEXT">Abandon de la création concours.</field>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id="MYB%;g:!~JRtfZvMAkl9"></block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="#e{Zrahotr%OH#%:2T|b" x="2858" y="2343">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="o~5:Q[DrAE{RJF]p}FCr">
+        <value name="IF0">
+          <block type="logic_compare" id="50f/r]eb0K79G}gz%^[e">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="_2e#wa[`YwhrY`5c_@u+"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="bQTD0~a#9SJer`i!vuCR">
+                <field name="TEXT">f/ping</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_send_channel" id="SRT5=duMbS@9|4[-t*F;">
+            <value name="CONTENT">
+              <block type="s4d_message_embed" id="x*+yb7CC2Ah^#6p:9R0?">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" message="true" color="true" title="true" footer="true"></mutation>
+                <value name="MESSAGE">
+                  <block type="text_join" id=";yT/w,Z{df`w7`Erv62D">
+                    <mutation items="3"></mutation>
+                    <value name="ADD0">
+                      <block type="s4d_newline" id="@pwZ(}QnB=OXLM)4REs-"></block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id="itg!q1Adz@R)!x;!WJ}I">
+                        <field name="TEXT">💓 Ping : </field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="s4d_bot_ping" id="Be$eIVFK8nX4XuT_R:g*"></block>
+                    </value>
+                  </block>
+                </value>
+                <value name="COLOR">
+                  <block type="colour_picker" id="=Jnm{wqNGWDKjOv%I7tb">
+                    <field name="COLOUR">#990000</field>
+                  </block>
+                </value>
+                <value name="TITLE">
+                  <block type="text" id="+=A$p8=[*keoyhplw=[?">
+                    <field name="TEXT">Ping du bot :</field>
+                  </block>
+                </value>
+                <value name="FOOTER">
+                  <block type="text" id="tEWf)2GmW/9}O*vUFWM:">
+                    <field name="TEXT">Préfixe du bot : f/</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="CHANNEL">
+              <block type="s4d_message_channel" id="L!a/yprfkf!YC=Zy+uDe"></block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_react_added" id="9^+=RCvo}}/T[y6dm}gQ" x="5333" y="2716">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="|uokx_o)yR5;:gThIaS4">
+        <value name="IF0">
+          <block type="logic_compare" id="8%YAf!gpxS_3w3}0L=EV">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_react_emoji" id="Q)Rg^q5{%ZvZa0Rk{(4G"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="fXpFMlZj+m[)?p?U%bgq">
+                <field name="TEXT">🎉</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="lists_setIndex" id="m(XJAYRhRf^iM.S|3#[)">
+            <mutation at="false"></mutation>
+            <field name="MODE">INSERT</field>
+            <field name="WHERE">RANDOM</field>
+            <value name="LIST">
+              <block type="variables_get" id="jGV0.3_uBbc)D)hmaOB|">
+                <field name="VAR" id="aVze[zymP0t$}uGgN46#">Participants concours</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="s4d_react_member" id="?SLOzI#[E9:rQrOI-|P?"></block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
